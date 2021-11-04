@@ -24,6 +24,11 @@ body {
   font: 400 1rem "Poppins";
 }
 
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .box {
   display: -webkit-box;
   display: -ms-flexbox;
