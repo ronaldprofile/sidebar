@@ -19,20 +19,26 @@ ul {
   list-style: none;
 }
 
+img {
+  cursor: pointer;
+}
+
 body {
   background: #dce4e3;
   font: 400 1rem "Poppins";
 }
 
 .hide {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 
 .box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .box .sidebar {
@@ -49,6 +55,55 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+
+.box .sidebar.hide-sidebar {
+  width: 78px !important;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+
+.box .sidebar.hide-sidebar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box .sidebar.hide-sidebar .container header {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.box .sidebar.hide-sidebar .container header .logo img {
+  display: none;
+}
+
+.box .sidebar.hide-sidebar .container form .field {
+  background: #dce4e3;
+}
+
+.box .sidebar.hide-sidebar .container form .field input {
+  display: none;
+}
+
+.box .sidebar.hide-sidebar footer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.box .sidebar.hide-sidebar footer .avatar {
+  display: none;
 }
 
 .box .sidebar .container {
@@ -67,10 +122,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.box .sidebar .container header img {
-  cursor: pointer;
 }
 
 .box .sidebar .container form {
@@ -133,10 +184,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.812rem;
-  -webkit-transition: -webkit-filter 0.2s;
-  transition: -webkit-filter 0.2s;
-  transition: filter 0.2s;
-  transition: filter 0.2s, -webkit-filter 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .box .sidebar .container nav ul li a:hover {
@@ -188,11 +237,7 @@ body {
   line-height: 1.125rem;
 }
 
-.box .sidebar footer .logout img {
-  cursor: pointer;
-}
-
-.box main h2 {
+main h2 {
   font-weight: 500;
   color: #084236;
   margin-top: 1.125rem;

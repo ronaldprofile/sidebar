@@ -1,49 +1,55 @@
-@import "./variables";
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: 0;
-}
-
-html,
-body {
-  height: 100vh;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-body {
-  background: $body-bg-color;
-  font: 400 1rem $fontFamily;
-}
-
-.hide {
-  opacity: 0;
-  visibility: hidden;
-}
+@import "./reset";
 
 .box {
   display: flex;
+  align-items: stretch;
 
   .sidebar {
     width: 250px;
     height: 100vh;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
     background: $green;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: width 0.3s ease;
+
+    &.hide-sidebar {
+      width: 78px !important;
+      transition: width 0.3s ease;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        header {
+          justify-content: center;
+
+          .logo img {
+            display: none;
+          }
+        }
+
+        form {
+          .field {
+            background: $light-grey;
+
+            input {
+              display: none;
+            }
+          }
+        }
+      }
+
+      footer {
+        justify-content: center;
+
+        .avatar {
+          display: none;
+        }
+      }
+    }
 
     .container {
       padding: 0 0.875rem;
@@ -54,10 +60,6 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        img {
-          cursor: pointer;
-        }
       }
 
       form {
@@ -98,7 +100,9 @@ body {
               display: flex;
               align-items: center;
               gap: 0.812rem;
-              transition: filter 0.2s;
+
+              transition: all 0.2s;
+
               &:hover {
                 filter: brightness(1.4);
               }
@@ -140,19 +144,15 @@ body {
           }
         }
       }
-
-      .logout img {
-        cursor: pointer;
-      }
     }
   }
+}
 
-  main {
-    h2 {
-      font-weight: 500;
-      color: $text-color;
-      margin-top: 1.125rem;
-      margin-left: 1.125rem;
-    }
+main {
+  h2 {
+    font-weight: 500;
+    color: $text-color;
+    margin-top: 1.125rem;
+    margin-left: 1.125rem;
   }
 }
