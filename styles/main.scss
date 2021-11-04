@@ -1,0 +1,153 @@
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background: $body-bg-color;
+  font: 400 1rem $fontFamily;
+}
+
+.box {
+  display: flex;
+
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    background: $green;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .container {
+      padding: 0 0.875rem;
+
+      header {
+        width: 100%;
+        padding: 1.625rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          cursor: pointer;
+        }
+      }
+
+      form {
+        margin-bottom: 1.25rem;
+        .field {
+          padding: 0.812rem;
+          background: $light-green;
+
+          display: flex;
+          align-items: center;
+          gap: 0.812rem;
+
+          border-radius: 0.75rem;
+
+          input {
+            font-size: 0.937rem;
+            background: transparent;
+            border: 0;
+
+            &::placeholder {
+              color: $text-color;
+            }
+          }
+        }
+      }
+
+      nav {
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 2.125rem;
+
+          li {
+            a {
+              color: $text-color;
+              font-size: 0.937rem;
+
+              display: flex;
+              align-items: center;
+              gap: 0.812rem;
+              transition: filter 0.2s;
+              &:hover {
+                filter: brightness(1.4);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      width: 100%;
+      height: 60px;
+      padding: 0.75rem 0.875rem;
+      background: $light-green;
+      color: $text-color;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .avatar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        img {
+          width: 2.812rem;
+          height: 2.812rem;
+          object-fit: cover;
+
+          border-radius: 0.75rem;
+        }
+
+        > div {
+          line-height: 1;
+          span:last-child {
+            font-size: 0.75rem;
+            line-height: 1.125rem;
+          }
+        }
+      }
+
+      .logout img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  main {
+    h2 {
+      font-weight: 500;
+      color: $text-color;
+      margin-top: 1.125rem;
+      margin-left: 1.125rem;
+    }
+  }
+}
